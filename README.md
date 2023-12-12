@@ -30,6 +30,7 @@ This is my personal Neovim configuration, tailored to enhance my coding and text
 - **Key Mappings:** Custom key mappings to improve navigation and productivity.
 - **Themes:** Stylish and eye-friendly color schemes for a pleasant editing experience.
 - **Custom Settings:** Various settings and configurations to suit my workflow.
+-  **Screenshots**
    - **Minimap and Floating Diagnostics**
    ![Screenshot 2023-12-11 153045](https://github.com/Kmac907/Nvim-Config/assets/120307903/91a863b5-1c6c-4322-8334-16975f9b9fb5)
    - **File Explorer**
