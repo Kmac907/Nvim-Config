@@ -22,11 +22,11 @@ This is my personal Neovim configuration, tailored to enhance my coding and text
 
    ```bash
    git clone https://github.com/Kmac907/Nvim-Config.git ~/.config/nvim
-Install plugins:
+2. Install plugins:
 
 Open Neovim and run :PlugInstall to install the configured plugins.
 
-Restart Neovim.
+3. Restart Neovim.
 
 Customization
 Feel free to customize the configuration to match your preferences. Edit the init.vim file to add/remove plugins or adjust settings.
