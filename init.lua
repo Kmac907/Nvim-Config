@@ -1,12 +1,12 @@
 -- Set <space> as the leader key
 -- See `:help mapleader`
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+-- NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Install package manager
---    https://github.com/folke/lazy.nvim
---    `:help lazy.nvim.txt` for more info
+-- https://github.com/folke/lazy.nvim
+-- `:help lazy.nvim.txt` for more info
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -20,8 +20,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
---  You can also configure plugins after the setup call,
---    as they will be available in your neovim runtime.
+-- You can also configure plugins after the setup call,
+-- as they will be available in your neovim runtime.
 require("lazy").setup({
   -- Editor related plugins
   {
@@ -82,7 +82,7 @@ require("lazy").setup({
   -- },
 
   {
-    -- Adds git releated signs to the gutter, as well as utilities for managing changes
+    -- Adds git-related signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
     opts = {
       -- See `:help gitsigns.txt`
@@ -94,6 +94,89 @@ require("lazy").setup({
         changedelete = { text = "~" },
       },
     },
+  },
+
+  -- Dashboard plugin configuration
+  {
+    "nvim-dev/dashboard-nvim",
+    event = "VimEnter",
+    config = function()
+      require('dashboard').setup {
+        theme = 'doom',
+        config = {
+          header = {
+            
+	    "                                   ",
+	    "                                   ",
+	    "                                   ",
+	    "        ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ",
+	    "         ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ",
+	    "               ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ",
+	    "                ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ",
+	    "               ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ",
+	    "        ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ",
+	    "       ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ",
+	    "      ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ",
+	    "      ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ",
+	    "           ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ",
+	    "            ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ",
+	    "                                        ",
+            '                                                         ',
+            '    ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗   ',
+            '    ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║   ',
+            '    ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║   ',
+            '    ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║   ',
+            '    ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║   ',
+            '    ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝   ',
+            '                                                         ',
+          },
+
+          center = {
+            {
+              icon = ' ',
+              icon_hl = 'Title',
+              desc = 'Recently Opened Files',
+              desc_hl = 'String',
+              key = 'r',
+              keymap = '',
+              key_hl = 'Number',
+              key_format = ' %s', -- remove default surrounding `[]`
+              action = 'Telescope oldfiles',
+            },
+
+            {
+              icon = ' ',
+              desc = 'Find File           ',
+              key = 'b',
+              keymap = '',
+              key_hl = 'Number',
+              key_format = ' %s', -- remove default surrounding `[]`
+              action = 'Telescope find_files',
+            },
+
+            {
+              icon = ' ',
+              desc = 'File Browser',
+              key = 'fb',
+              keymap = '',
+              key_format = ' %s', -- remove default surrounding `[]`
+              action = 'Telescope file_browser',
+            },
+
+            {
+              icon = ' ',
+              desc = 'Quit Neovim',
+              key = 'q',
+              keymap = '',
+              key_format = ' %s',
+              action = ':qa',
+            },
+          },
+          footer = { "Do one thing, do it well" }  -- your footer
+        }
+      }
+    end,
+    dependencies = { {'nvim-tree/nvim-web-devicons'} }
   },
 
   -- require("kickstart.plugins.autoformat"),
@@ -109,11 +192,11 @@ require("config.options")
 -- [[ Keymaps ]]
 require("config.keymaps")
 
-   vim.diagnostic.config({
-        virtual_text = {
-          source = "always", -- Or "if_many"
-        },
-     float = {
-       source = "always", -- Or "if_many"
-     },
-   })
+vim.diagnostic.config({
+  virtual_text = {
+    source = "always", -- Or "if_many"
+  },
+  float = {
+    source = "always", -- Or "if_many"
+  },
+})
