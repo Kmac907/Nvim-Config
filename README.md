@@ -31,6 +31,8 @@ This is my personal Neovim configuration, tailored to enhance my coding and text
 - **Themes:** Stylish and eye-friendly color schemes for a pleasant editing experience.
 - **Custom Settings:** Various settings and configurations to suit my workflow.
 -  **Screenshots**
+   - **Custom Start Screen**
+   ![Screenshot 2023-12-12 023253](https://github.com/Kmac907/Nvim-Config/assets/120307903/c4ef9346-e24b-4a6a-8ff2-4af7e097e972)
    - **Minimap and Floating Diagnostics**
    ![Screenshot 2023-12-11 153045](https://github.com/Kmac907/Nvim-Config/assets/120307903/91a863b5-1c6c-4322-8334-16975f9b9fb5)
    - **File Explorer**
