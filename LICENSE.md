@@ -1,5 +1,4 @@
 
-Now, here's a simple example of the MIT License file (LICENSE.md) you can include in your repository:
 
 ```plaintext
 MIT License
